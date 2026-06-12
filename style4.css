@@ -1,0 +1,352 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --bg-light: #f4faf8;
+    --bg-dark: #091a16;
+    --text-dark: #0e221d;
+    --text-muted: #526661;
+    --text-light: #ffffff;
+    --accent-teal: #0fa484;
+    --border-color: #d1e2dd;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Shared Components --- */
+.badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    background-color: #e2f0ec;
+    color: var(--accent-teal);
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--accent-teal);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+}
+
+/* --- Integrations Section --- */
+.integrations-section {
+    text-align: center;
+    padding: 5rem 2rem 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tag {
+    background: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    gap: 4rem;
+}
+
+.faq-sidebar {
+    flex: 1;
+    max-width: 350px;
+}
+
+.faq-sidebar p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.faq-sidebar a {
+    color: var(--text-dark);
+    text-decoration: underline;
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: var(--accent-teal);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.faq-accordion {
+    flex: 2;
+}
+
+.faq-accordion details {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+}
+
+.faq-accordion summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-accordion details p {
+    padding-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.faq-accordion .icon {
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+/* --- CTA Section --- */
+.cta-container {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #091e19 0%, #061511 100%);
+    border-radius: 24px;
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.cta-card .light-badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: #5eead4;
+}
+
+.cta-card h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--text-light);
+}
+
+.cta-card p {
+    color: #94a3b8;
+    max-width: 450px;
+    margin-top: 1rem;
+}
+
+.cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 220px;
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-teal);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0d8f73;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* --- Footer Section --- */
+.footer {
+    background-color: var(--bg-dark);
+    color: #94a3b8;
+    padding: 5rem 2rem 2rem 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 4rem;
+}
+
+.footer-brand .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-brand .logo span {
+    color: var(--accent-teal);
+}
+
+.footer-brand p {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.social-icons a {
+    color: #64748b;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-links h4 {
+    color: white;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.footer-legal a {
+    color: #64748b;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+
+.footer-legal a:hover {
+    color: white;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 900px) {
+    .faq-section {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    
+    .faq-sidebar {
+        max-width: 100%;
+    }
+
+    .cta-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 3rem 2rem;
+    }
+
+    .cta-card p {
+        margin: 1rem auto 0 auto;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer-legal a {
+        margin: 0 0.75rem;
+    }
+}
